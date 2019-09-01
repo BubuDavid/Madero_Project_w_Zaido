@@ -5,7 +5,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__, template_folder = 'templates')
 
-users = db_connect(MONGO_URI, 'Proyecto_Madero', 'users')
+users = db_connect(MONGO_URI, 'Project_name', 'Collection_Name')
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
