@@ -23,7 +23,18 @@
 				</div>
 			</div>
 		</div>
-		<button class="btn btn-info">Agregar!</button>
+
+		{% if session_flag == False %}
+		<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="¡Debes iniciar sesión para agregar!">
+			<button class="btn btn-success" style="pointer-events: none;" type="submit" value="Agregar" disabled>¡Agregar!</button>
+		</span>
+		<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="¡Debes iniciar sesión para borrar!">
+			<button class="btn btn-danger" style="pointer-events: none;" type="submit" value="Borrar" disabled>¡Borrar!</button>
+		</span>
+		{% else %}
+			<button  name="submit_button" class="btn btn-outline-success" type="submit" value="Agregar">¡Agregar!</button>
+			<button name="submit_button"  class="btn btn-outline-danger" type="submit" value="Borrar">¡Borrar!</button>
+		{% endif %}
 	</form>
 	
 	<div style="padding : 4px;
@@ -43,7 +54,7 @@
 		    </thead>
 		    <tbody>
 		      {% for item in items %}
-		        <tr >
+		        <tr>
 		          <td>{{ item['item'] }}</td>
 		          <td>{{ item['precio'] }}</td>
 		        </tr>
