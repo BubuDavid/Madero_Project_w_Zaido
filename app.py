@@ -6,8 +6,8 @@ import os
 
 app = Flask(__name__, template_folder = 'templates')
 
-inventario = db_connect(MONGO_URI, 'Proyecto_Madero', 'inventario')
-usuarios = db_connect(MONGO_URI, 'Proyecto_Madero', 'usuarios')
+inventario = db_connect(MONGO_URI, 'Nombre_del_Proyecto', 'Nombre_de_las_colecciones')
+usuarios = db_connect(MONGO_URI, 'Nombre_del_Proyecto', 'Nombre_de_las_colecciones')
 
 app.secret_key = os.urandom(24)
 
